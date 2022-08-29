@@ -6,8 +6,10 @@
 // 1 2 3 4
 // 2 3 4 5
 
-int rows = 5;
-int columns = 4;
+Console.Write("Input vertical length: ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.Write("Input horizontal length: ");
+int columns = int.Parse(Console.ReadLine()!);
 
 int[,] array2D = new int[rows, columns];
 
