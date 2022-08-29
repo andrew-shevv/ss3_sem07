@@ -11,36 +11,59 @@
 // 5 81 2 9
 // 8 4 2 4
 
-Console.WriteLine("Creating array: ");
-
-int rows = 5;
-int columns = 4;
-
-int[,] array2D = new int[rows, columns];
-
-Random rand = new Random();
-
-for (int i = 0; i < rows; i++)
+int[,] CreateArray2D(int verticalLength, int horizontalLength, int minValue = 1, int maxValue = 9)
 {
-    for (int j = 0; j < columns; j++)
+    int[,] array2D = new int[verticalLength, horizontalLength];
+
+    Random rand = new Random();
+
+    for (int i = 0; i < verticalLength; i++)
     {
-        array2D[i, j] = rand.Next(1, 10);
-        Console.Write($" {array2D[i, j]} ");
+        for (int j = 0; j < horizontalLength; j++)
+        {
+            array2D[i, j] = rand.Next(minValue, maxValue + 1);
+        }
     }
-    Console.WriteLine();
+    return array2D;
 }
+
+void OddIndexSquared(int[,] array2D)
+{
+    for (int i = 0; i < array2D.GetLength(0); i++)
+    {
+        for (int j = 0; j < array2D.GetLength(1); j++)
+        {
+            if ((i + 1) % 2 == 0 && (j + 1)% 2 == 0)
+            {
+                array2D[i, j] *= array2D[i, j];
+            }
+        }
+    }
+}
+
+void PrintArray2D(int[,] array2D)
+{
+    for (int i = 0; i < array2D.GetLength(0); i++)
+    {
+        for (int j = 0; j < array2D.GetLength(1); j++)
+        {
+            Console.Write($" {array2D[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Write("Input vertical length: ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.Write("Input horizontal length: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("\nCreating array: ");
+
+int[,] matrix = CreateArray2D(rows, columns);
+PrintArray2D(matrix);
 
 Console.WriteLine("\nNewly altered array: ");
 
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-    {
-        if ((i + 1) % 2 == 0 && (j + 1)% 2 == 0)
-        {
-            array2D[i, j] *= array2D[i, j];
-        }
-        Console.Write($" {array2D[i, j]} ");
-    }
-    Console.WriteLine();
-}
+OddIndexSquared(matrix);
+PrintArray2D(matrix);

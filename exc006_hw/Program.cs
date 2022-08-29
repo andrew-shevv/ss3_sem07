@@ -8,22 +8,44 @@
 // 8 4 2 4
 // 1 7 -> такого числа в массиве нет
 
-int rows = 4;
-int columns = 5;
-
-int[,] array2D = new int[rows, columns];
-
-Random rand = new Random();
-
-for (int i = 0; i < rows; i++)
+int[,] CreateArray2D(int verticalLength, int horizontalLength, int minValue = -9, int maxValue = 9)
 {
-    for (int j = 0; j < columns; j++)
+    int[,] array2D = new int[verticalLength, horizontalLength];
+
+    Random rand = new Random();
+
+    for (int i = 0; i < verticalLength; i++)
     {
-        array2D[i, j] = rand.Next(1, 10);
-        Console.Write($" {array2D[i, j]} ");
+        for (int j = 0; j < horizontalLength; j++)
+        {
+            array2D[i, j] = rand.Next(minValue, maxValue + 1);
+        }
     }
-    Console.WriteLine();
+    return array2D;
 }
+
+void PrintArray2D(int[,] array2D)
+{
+    for (int i = 0; i < array2D.GetLength(0); i++)
+    {
+        for (int j = 0; j < array2D.GetLength(1); j++)
+        {
+            Console.Write($" {array2D[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Write("Input vertical length: ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.Write("Input horizontal length: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] matrix = CreateArray2D(rows, columns);
+
+Console.WriteLine();
+PrintArray2D(matrix);
+Console.WriteLine();
 
 Console.Write("Input vertical position of element: ");
 int verticalIndex = int.Parse(Console.ReadLine()!);
@@ -36,6 +58,6 @@ if (verticalIndex < rows
     && horizontalIndex >= 0
 )
 {
-    Console.WriteLine($"{array2D[verticalIndex, horizontalIndex]}");
+    Console.WriteLine($"\n{matrix[verticalIndex, horizontalIndex]}");
 }
-else Console.WriteLine("Element doesn't exist in the array");
+else Console.WriteLine("\nElement doesn't exist in the array");

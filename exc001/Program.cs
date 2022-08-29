@@ -40,4 +40,5 @@ int columns = int.Parse(Console.ReadLine()!);
 
 int[,] matrix = CreateArray2D(rows, columns);
 
+Console.WriteLine();
 PrintArray2D(matrix);
