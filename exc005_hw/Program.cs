@@ -5,3 +5,17 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
+int rows = 5;
+int columns = 4;
+
+double[,] array2D = new double[rows, columns];
+
+Random rand = new Random();
+
+for (int i = 0; i < rows; i++){
+    for (int j = 0; j < columns; j++){
+        array2D[i, j] = rand.NextDouble() * 20 - 10;
+        Console.Write($" {Math.Round(array2D[i, j], 1)} ");
+    }
+    Console.WriteLine();
+}
