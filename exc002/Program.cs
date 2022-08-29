@@ -13,8 +13,10 @@ int columns = int.Parse(Console.ReadLine()!);
 
 int[,] array2D = new int[rows, columns];
 
-for (int i = 0; i < rows; i++){
-    for (int j = 0; j < columns; j++){
+for (int i = 0; i < rows; i++)
+{
+    for (int j = 0; j < columns; j++)
+    {
         array2D[i, j] = i + j;
         Console.Write($" {array2D[i, j]} ");
     }

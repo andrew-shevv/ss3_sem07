@@ -16,11 +16,14 @@ Random rand = new Random();
 
 int sumDiagonal = 0;
 
-for (int i = 0; i < rows; i++){
-    for (int j = 0; j < columns; j++){
+for (int i = 0; i < rows; i++)
+{
+    for (int j = 0; j < columns; j++)
+    {
         array2D[i, j] = rand.Next(1, 10);
         Console.Write($" {array2D[i, j]} ");
-        if (i == j){
+        if (i == j)
+        {
             sumDiagonal += array2D[i, j];
         }
     }

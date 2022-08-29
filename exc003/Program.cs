@@ -20,8 +20,10 @@ int[,] array2D = new int[rows, columns];
 
 Random rand = new Random();
 
-for (int i = 0; i < rows; i++){
-    for (int j = 0; j < columns; j++){
+for (int i = 0; i < rows; i++)
+{
+    for (int j = 0; j < columns; j++)
+    {
         array2D[i, j] = rand.Next(1, 10);
         Console.Write($" {array2D[i, j]} ");
     }
@@ -30,9 +32,12 @@ for (int i = 0; i < rows; i++){
 
 Console.WriteLine("\nNewly altered array: ");
 
-for (int i = 0; i < rows; i++){
-    for (int j = 0; j < columns; j++){
-        if (i % 2 == 0 && j % 2 == 0){
+for (int i = 0; i < rows; i++)
+{
+    for (int j = 0; j < columns; j++)
+    {
+        if (i % 2 == 0 && j % 2 == 0)
+        {
             array2D[i, j] *= array2D[i, j];
         }
         Console.Write($" {array2D[i, j]} ");

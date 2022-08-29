@@ -14,8 +14,10 @@ double[,] array2D = new double[rows, columns];
 
 Random rand = new Random();
 
-for (int i = 0; i < rows; i++){
-    for (int j = 0; j < columns; j++){
+for (int i = 0; i < rows; i++)
+{
+    for (int j = 0; j < columns; j++)
+    {
         array2D[i, j] = rand.NextDouble() * 20 - 10;
         Console.Write($" {Math.Round(array2D[i, j], 1)} ");
     }
