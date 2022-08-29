@@ -36,7 +36,7 @@ for (int i = 0; i < rows; i++)
 {
     for (int j = 0; j < columns; j++)
     {
-        if (i % 2 == 0 && j % 2 == 0)
+        if ((i + 1) % 2 == 0 && (j + 1)% 2 == 0)
         {
             array2D[i, j] *= array2D[i, j];
         }
