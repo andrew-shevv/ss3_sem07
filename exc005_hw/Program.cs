@@ -5,8 +5,10 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-int rows = 5;
-int columns = 4;
+Console.Write("Input vertical length: ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.Write("Input horizontal length: ");
+int columns = int.Parse(Console.ReadLine()!);
 
 double[,] array2D = new double[rows, columns];
 
